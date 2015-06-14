@@ -1,0 +1,1 @@
+{"attributes":{"name":{"type":"string","defaultsTo":null},"email":{"type":"string","defaultsTo":null},"phone":{"type":"string","defaultsTo":null}},"globalId":"Entry","identity":"entry"}

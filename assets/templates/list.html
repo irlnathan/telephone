@@ -1,0 +1,39 @@
+<!-- Error state -->
+<div class="alert alert-info toggle" ng-show="entryProfile.errorMsg">
+  <h5>Oops!</h5>
+  <p>Looks like an error occurred.</p>
+  <code>
+    {{entryProfile.errorMsg}}
+  </code>
+</div>
+
+<!-- Loading state -->
+<div ng-show="entryProfile.loading">
+  <span class="overlord-loading-spinner fa fa-spinner"></span>
+  <span>Loading user data...</span>
+</div>
+
+<div ng-hide="entryProfile.loading">
+
+<div>
+  <table class='table'>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+      <tr ng-repeat="profile in entryProfile.profiles">
+        <td></td>
+        <td>{{profile.name}}</td>
+        <td>{{profile.email}}</td>
+        <td>{{profile.phone}}</td>
+        <td><a href="#/entry/{{profile.id}}" class="btn btn-sm btn-primary">Show</a></td>
+        <td><a href="#/entry/edit/{{profile.id}}" class="btn btn-sm btn-warning">Edit</a></td>
+        <td><a ng-click="deleteEntry(profile.id)" class="btn btn-sm btn-primary btn-danger">Delete</a></td>
+      </tr> 
+  </table>
+</div>

@@ -1,0 +1,45 @@
+<!-- SIGNUP FORM -->
+<!-- Error state -->
+<div class="alert alert-info toggle" ng-show="addEntryForm.errorMsg">
+  <h5>Oops!</h5>
+  <p>Looks like an error occurred.  Please try again later.</p>
+
+  <div ng-repeat="reason in addEntryForm.reasons">
+    {{reason}}
+  </div>
+</div>
+
+<!-- Loading state -->
+<div ng-show="addEntryForm.loading">
+  <span class="overlord-loading-spinner fa fa-spinner"></span>
+  <span>Loading user data...</span>
+</div>
+
+<div ng-hide="addEntryForm.loading">
+<form ng-submit="addEntry()" class="form-signup" >
+  <h2>Create a user</h2>
+  <div class="row">
+    <!-- N A M E -->
+    <div class="control-group form-group col-md-12">
+      <label>Your name</label>
+      <input type="text" class="form-control" placeholder="Frank Sinatra" name="name" ng-model="addEntryForm.name">
+    </div>
+     <!-- E M A I L -->
+    <div class="control-group form-group col-md-12">
+      <label>Your email adddress</label>
+      <input type="text" class="form-control" placeholder="frank@ratpack.com" name="email" ng-model="addEntryForm.email">
+    </div>
+    <!-- T E L E P H O N E  N U M B E R -->
+    <div class="control-group form-group col-md-12">
+      <label>Your email adddress</label>
+      <input type="text" class="form-control" placeholder="512-555-1212" name="phone" ng-model="addEntryForm.phone">
+    </div>
+  </div>
+  <br/>
+  <!-- Disable signup button until the form has no errors -->
+  <button class="btn btn-primary btn-lg btn-block" type="submit" >
+  <span ng-show="!addEntryForm.loading">Add User</span>
+  <span class="overlord-loading-spinner fa fa-spinner" ng-show="addEntryForm.loading" ></span>
+  <span ng-show="addEntryForm.loading">Preparing your new user...</span>
+  </button>
+</form>

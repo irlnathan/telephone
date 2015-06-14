@@ -1,0 +1,13 @@
+{
+  "dependencies": {},
+  "machinepack": {
+    "machines": ["create_entry", "destroy_entry", "findOne_entry", "find_entry", "update_entry"],
+    "machineVersions": {
+      "create_entry": "0.0.3",
+      "destroy_entry": "0.0.3",
+      "findOne_entry": "0.0.3",
+      "find_entry": "0.0.3",
+      "update_entry": "0.0.3"
+    }
+  }
+}

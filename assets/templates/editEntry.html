@@ -1,0 +1,45 @@
+<!-- Error state -->
+<div class="alert alert-info toggle" ng-show="editEntryForm.errorMsg">
+  <h5>Oops!</h5>
+  <p>Looks like an error occurred.</p>
+  <code>
+    {{editEntryForm.errorMsg}}
+  </code>
+</div>
+
+<!-- Loading state -->
+<div ng-show="editEntryForm.loading">
+  <span class="overlord-loading-spinner fa fa-spinner"></span>
+  <span>Loading user data...</span>
+</div>
+
+<div ng-hide="editEntryForm.loading">
+
+<div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4>Edit Entry</h4>
+      </div>
+      <div class="panel-body">
+        <form ng-submit="updateEntry()">
+          <div class="control-group form-group col-md-12">
+            <label>Your Name</label>
+            <input type="text" class="form-control" name="name" ng-model="editEntryForm.properties.name">
+          </div>
+          <div class="control-group form-group col-md-12">
+            <label>Your Email</label>
+            <input type="text" class="form-control" name="email" ng-model="editEntryForm.properties.email">
+          </div>
+          <div class="control-group form-group col-md-12">
+            <label>Your Telephone</label>
+            <input type="text" class="form-control" name="phone" ng-model="editEntryForm.properties.phone">
+          </div>
+
+          <button type="submit" class="btn btn-lg btn-success btn-block">
+            <span ng-show="editEntryForm.saving" class="overlord-loading-spinner fa fa-spinner"></span>
+            <span ng-show="editEntryForm.saving">Saving...</span>
+            <span ng-hide="editEntryForm.saving" class="btn-text">Save</span>
+          </button>
+        </form>
+      </div>
+    </div>

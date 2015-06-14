@@ -1,0 +1,1 @@
+angular.module('telephone').controller('homePageController', [ function(){}]);
